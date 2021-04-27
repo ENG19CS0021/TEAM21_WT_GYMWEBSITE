@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iconic Fitness</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<style>
+    /* CSS Reset */
+    
+    .header{
+        background-color: black;
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 60px;
+        top: 40px;
+    }
+
+    .left img {
+        width: 136px;
+        filter: invert(100%);
+    }
+
+    .left div {
+        line-height: 19px;
+        font-size: 26px;
+        text-align: center;
+        color: skyblue;
+    }
+
+    .right {
+        display: block;
+        width: 36%;
+        margin: 20px auto;
+        /* border: 2px solid green; */
+    }
+    .hero{
+        background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('img/man-4648086_1920.jpg');
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        padding: 30px;
+
+
+        display: flex;
+        justify-content: last baseline;
+        align-items: center;
+    }
+    .hero__content{
+        color: whitesmoke;
+        padding: 48px 16px;
+        line-height: 1;
+
+    }
+    .hero__content h1{
+        font-size: 3em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        color: lightskyblue;
+    }
+    .hero__content p{
+        font-size: 1.5em;
+        
+        margin-bottom: 3rem;
+    }
+    .button{
+        padding: 1rem 3rem;
+        border: none;
+        border: red;
+        color: green;
+        font-size: 2rem;
+        cursor: pointer;
+        outline: none;
+        border-radius: 4px;
+    }
+    .button:hover{
+        background: red;
+    }
+
+    
+    h2{
+        margin-top: 7.5%;
+        text-align: right;
+        font-family: cursive;
+        color: whitesmoke;
+
+    }
+
+    .navbar {
+        background-color: black;
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .navbar li a {
+        color: indianred;
+        text-decoration: none;
+        padding: 34px 23px;
+
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: grey;
+
+    }
+
+  
+    .services{
+        padding: 8em;
+        background: white;
+
+    }
+    .services__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1em;
+    }
+    .services__img{
+        width: 100%;
+        height: 100%;
+        
+    }
+    .topline{
+        color: red;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0.5em;
+        font-size: 3em;
+    }
+    .services__heading{
+        margin-bottom: 1em;
+        font-size: 3em;
+        color: black;
+    }
+    .services__features{
+        list-style: disc;
+    }
+    .services__features{
+        margin-bottom: 1.5em;
+        font-size: 2em;
+        color: blue;
+    }
+    @media screen and (max-width: 700px){
+        .services__container{
+            grid-template-columns: 3fr;
+        }
+    }
+    .column{
+        float:left;
+        width: 33.33%;
+        padding: 5px;
+    }
+    .row::after{
+        content: " ";
+        clear: both;
+        display: table;
+    }
+    .membership{
+        background: black;
+        color: white;
+        padding: 6em;
+        text-align: center;
+    }
+    .membership h1{
+        margin-bottom: 1em;
+        font-size: 3em;
+        padding: 8px;
+    }
+    .membership__desc{
+        margin-bottom: 3em;
+        font-size: 2em;
+        padding: 16px;
+        text-transform: uppercase;
+    }
+   
+    
+    .membership__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    .membership__card{
+        padding: 32px;
+        min-height: 450px;
+        width: 325px;
+        background: white;
+        color: black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .membership__perk{
+        min-height: 150px;
+    }
+    .membership__perk p{
+        font-size: 1em;
+
+    }
+    .membership__card p{
+        margin-bottom: 16px;
+    
+    }
+    .card-icon{
+      font-size: 3em;
+      margin-bottom: 32px;
+      color: red;
+    }
+    .membership__card h3{
+        font-size: 1em;
+        margin-bottom: 32px;
+    }
+    @media screen and (max-width: 1100px){
+        .membership__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        .membership__card{
+            width: 90%;
+            margin-bottom: 2em;
+        }
+    }
+    .email{
+        background: url('img/pexels-lukas-669578.jpg') no-repeat center;
+        background-size: cover;
+        height: 450px;
+        width: 100%;
+        padding: 5em;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .email__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .email__content h1{
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 2em;
+        text-transform: uppercase;
+        padding: 8px;
+    }
+    .email__content p{
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 1em;
+        padding: 8px;
+    }
+    form{
+        z-index: 10;
+    }
+    .form__wrap input{
+        padding: 1em 3em;
+        outline: none;
+        width: 350px;
+        height: 50px;
+        border: none;
+        margin-right: 1em;
+        border-radius: 4px;
+    }
+    .footer{
+        padding: 5em;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        color: white;
+        background: black;
+    }
+    .footer__desc{
+        padding: 0.2rem;
+    }
+    .footer__desc h1{
+        text-transform: uppercase;
+        color: lightskyblue;
+    }
+    #phone{
+        font-size: 1em;
+    }
+    .footer__links{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+    }
+    .footer__tittle{
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .footer__link{
+        color: white;
+        font-size: 16px;
+        margin-bottom: 0.5em;
+        transition: 0.3s ease-in-out;
+
+    }
+    .footer__link:hover{
+        color: red;
+    }
+    
+
+
+
+
+   
+</style>
+
+<body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/2e50e04470e29384b4d4e9a3b6e4f1dd.png" alt="">
+            <div>Iconic Fitness</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="right">
+            <ul class="navbar">
+                <li><a href="iconicfitness.html" >Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="ourplans.html">OurPlans</a></li>
+                <li><a href="joinus.html">Join Us</a></li>
+                
+            </ul>
+        </div>
+        <div class="hero">
+            <div class="hero__content">
+                <h1 class="animate-hero">Iconic Fitness</h1>
+                <p class="animate-hero">Join now for Rs 4000/-</p>
+                <a href="ourplans.html" class="button animate-hero">Get Started</a>
+            </div>
+        </div>
+    
+    <!-- Footer Section-->
+    <div class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__desc">
+                <h1>ICONIC FITNESS</h1>
+                <p>
+                    No 4/19,1st Floor, Maruti Nagar, BTM Layout 1, Bengaluru, Karnataka 560029
+                </p>
+                <p id="phone"> 91-8823465123 </p>
+            </div>
+            <div class="footer__links">
+                <h2 class="footer__title">Contact Us</h2>>
+                <a href="/service.html" class="footer__link"> Contact</a>
+                <a href="/service.html" class="footer__link"> Support</a>
+                <a href="/service.html" class="footer__link"> Sponsorship</a>
+            </div>
+        </div>
+        <div class="footer__wrapper">
+            <div class="footer__links">
+                <h2 class="footer__title">Social Media</h2>>
+                <a href="https://www.facebook.com/" class="footer__link"> Facebook</a>
+                <a href="https://www.instagram.com/" class="footer__link"> Instagram</a>
+                <a href="https://www.twitter.com/" class="footer__link"> Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="app.js"> </script>
+</body>
+<body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/2e50e04470e29384b4d4e9a3b6e4f1dd.png" alt="">
+            <div>Iconic Fitness</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="right">
+            <ul class="navbar">
+                <li><a href="iconicfitness.html" >Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="ourplans.html">OurPlans</a></li>
+                <li><a href="joinus.html">Join Us</a></li>
+                
+            </ul>
+        </div>
+       
+    <!--Services section-->
+    <div class="services">
+        <div class="services__container">
+           <div>
+                <p class="topline animate-service">FEATURES</p>
+                <h1 class="services__heading animate-service">What We Offer</h1>
+                <p class="services__features animate-service">Group Fitness Classes</p>
+                <p class="services__features animate-service">Zumba Classes</p>
+                <p class="services__features animate-service">Personal Training</p>
+                <p class="services__features animate-service">Steam Room</p>
+                <p class="services__features animate-service">365 Days Open</p>
+                <p class="services__features animate-service">Seperate timing</p>
+           </div>
+           
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="img/pexels-andrea-piacquadio-3838937.jpg" alt="gym" style="width: 100%;" class="services__img animate-img">
+            </div>
+            <div class="column">
+                <img src="img/pexels-andrea-piacquadio-903171.jpg" alt="Saperateclasses" style="width: 100%;"  class="services__img animate-img">
+            </div>
+            <div class="column">
+                <img src="img/pexels-pixabay-414029.jpg" alt="personaltrainer" style="width: 100%;"  class="services__img animate-img">
+            </div>
+            <div class="column">
+                <img src="img/pexels-william-choquette-1954524.jpg" alt="gymaccess" style="width: 100%;"  class="services__img animate-img">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section-->
+    <div class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__desc">
+                <h1>ICONIC FITNESS</h1>
+                <p>
+                    No 4/19,1st Floor, Maruti Nagar, BTM Layout 1, Bengaluru, Karnataka 560029
+                </p>
+                <p id="phone"> 91-8823465123 </p>
+            </div>
+            <div class="footer__links">
+                <h2 class="footer__title">Contact Us</h2>>
+                <a href="/service.html" class="footer__link"> Contact</a>
+                <a href="/service.html" class="footer__link"> Support</a>
+                <a href="/service.html" class="footer__link"> Sponsorship</a>
+            </div>
+        </div>
+       Servicde
+       <body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/2e50e04470e29384b4d4e9a3b6e4f1dd.png" alt="">
+            <div>Iconic Fitness</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="right">
+            <ul class="navbar">
+                <li><a href="iconicfitness.html" >Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="ourplans.html">OurPlans</a></li>
+                <li><a href="joinus.html">Join Us</a></li>
+                
+            </ul>
+        </div>
+        
+    
+    <!-- Membership Section-->
+    <div class="membership">
+        <h1 class="animate-membership">View Our Plans</h1>
+        <p class="membership__desc animate-membership">
+            Get started today and recieve 20% off  your first month 
+        </p>
+        <div class="membership__wrapper">
+            <div class="membership__card animate-card">
+                <div class="membership__title">
+                    <i class="fas fa-dumbbell card-icon"></i> 
+                    <h3>Starter </h3>
+                </div>
+                <div class="membership__perk">
+                    <p>Get access to entire Gym</p>
+                    <p>rs4000 per month</p>
+                </div>
+                <a href="/" class="button">Sign Up</a>
+            </div>
+            <div class="membership__card animate-card">
+                <div class="membership__title">
+                    <i class="fas fa-bicycle  card-icon"> </i>
+                    <h3>Silver Package </h3>
+                </div>
+                <div class="membership__perk">
+                    <p>Get access to entire Gym</p>
+                    <p>Group Fitness Classes</p>
+                    <p>rs6000 per month</p>
+                </div>
+                <a href="/" class="button">Sign Up</a>
+            </div>
+            <div class="membership__card animate-card">
+                <div class="membership__title">
+                    <i class="fas fa-running card-icon"></i>
+                    <h3>Gold Package </h3>
+                </div>
+                <div class="membership__perk">
+                    <p>Get access to entire Gym</p>
+                    <p>Group Fitness Classes</p>
+                    <p>Personal Trainer</p>
+                    <p>Zumba</p>
+                    <p>rs9000 per month</p>
+                </div>
+                <a href="/" class="button">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <div class="email">
+        <div class="email__content">
+            <h1 class="animate-email">
+                Get access to member only perks
+            </h1>
+            <p class="animate-email">
+                Sign Up to get rs1000 off on your first Personal training session 
+            </p>
+        
+        <form action="https://www.gmail.com/" class="animate-email">
+            <div class="form__wrap">
+                <label for="email">
+                    <input type="email" placeholder="Enter your Email" id="Email" name="Email" value=" ">
+                </label>
+                <button class="button" type="submit">Sign Up</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</html>
